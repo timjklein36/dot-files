@@ -1,0 +1,29 @@
+#! /bin/bash
+
+. ~/scripts/grabcolors.sh
+
+PAUSE="dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop"
+
+PLAY="dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
+
+NEXT="dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
+
+PREVIOUS="dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
+
+while true; do
+	OPEN="$(pgrep -x "spotify")"
+
+	if [[ $OPEN = "" ]]; then
+		echo -e "%{c}%{A:spotify &:}\uf001%{A}";
+	else
+		STATUS="$(dbus-send --print-reply --session --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.freedesktop.DBus.Properties.Get string:'org.mpris.MediaPlayer2.Player' string:'PlaybackStatus' | grep variant | awk '{print $3}' | sed "s/\"//g")";
+
+		if [[ $STATUS = "Playing" ]]; then
+			echo -e "%{c}%{A:$PREVIOUS:}\uf048%{A}   %{A:$PAUSE:}\uf04c%{A}   %{A:$NEXT:}\uf051%{A}";
+		else
+			echo -e "%{c}%{A:$PREVIOUS:}\uf048%{A}   %{A:$PLAY:}\uf04b%{A}   %{A:$NEXT:}\uf051%{A}";
+		fi
+	fi
+
+	#sleep 1;
+done | lemonbar -p -d -r 2 -R $colo6 -g 80x25+356+8 -f "fontawesome:size=12" -F $fg -B $bg | bash

@@ -1,0 +1,12 @@
+#! /bin/bash
+
+. ~/scripts/grabcolors.sh
+
+lo=$colo2
+md=$colo4
+hi=$colo1
+
+while true; do
+	echo -e "%{c}%{F$colo6}\uf108%{F-} $(ps -eo pcpu | awk 'BEGIN {sum=0.0f} {sum+=$1} END {printf("%.1f", sum)}')%{T2}%%{T-}";
+	sleep 1;
+done | lemonbar -p -d -a 1 -g 90x25+1256+8 -r 2 -R $colo6 -f "Nouveau IBM:size=10" -f "Nouveau IBM:size=11" -f "fontawesome:size=12" -f "fontawesome:size=8" -B $bg -F $fg | bash 

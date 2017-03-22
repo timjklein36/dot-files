@@ -1,0 +1,13 @@
+#! /bin/bash
+
+. /home/tim/scripts/grabcolors.sh
+
+lo=$colo2
+md=$colo4
+hi=$colo1
+
+while true; do
+	echo -e "%{c}%{F${colo6}}\uf135 %{F-}$(free -h | awk ' /Mem/ {print $3 "/" $2}')"
+	sleep 1
+done | lemonbar -p -d -r 2 -R $colo6 -g 110x25+1126+8 -f "Nouveau IBM:size=10" -f "fontawesome:size=12" -F $fg -B $bg
+

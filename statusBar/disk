@@ -1,0 +1,22 @@
+#! /bin/bash
+
+. ~/scripts/grabcolors.sh
+
+lo=$colo2
+md=$colo4
+hi=$colo1
+
+while true; do
+
+	SIDE_USED=$(df -h | grep side | awk '{print $3}');
+	SIDE_SIZE=$(df -h | grep side | awk '{print $2}');
+	MAIN_USED=$(df -h | grep main | awk '{print $3}');
+	MAIN_SIZE=$(df -h | grep main | awk '{print $2}');
+	ROOT_USED=$(df -h | grep sdb2 | awk '{print $3}');
+	ROOT_SIZE=$(df -h | grep sdb2 | awk '{print $2}');
+	
+	echo -e "%{c}%{F$colo4}\uf2c0%{F-} $ROOT_USED / $ROOT_SIZE %{F$colo8}|%{F-} %{F$colo4}\uf228%{F-} $MAIN_USED / $MAIN_SIZE %{F$colo8}|%{F-} %{F$colo4}\uf221%{F-} $SIDE_USED / $SIDE_SIZE";
+
+	sleep 5;
+
+done | lemonbar -p -d -a 1 -g 400x25+706+8 -r 2 -R $colo6 -f "Nouveau IBM:size=10" -f "fontawesome:size=12" -F $fg -B $bg | bash

@@ -1,0 +1,7 @@
+#!/bin/sh
+
+. ~/scripts/grabcolors.sh
+
+#echo -e "%{c}\uf001" | lemonbar -p -d -r 2 -R $colo6 -g 40x25+340+8 -f "fontawesome:size=12" -F $fg -B $bg &
+
+zscroll -d 0.17 -b "  " --scrollpadding " " -l 32 -n -u "/home/tim/scripts/statusBar/currentSong.sh" | lemonbar -p -d -r 2 -R $colo6 -g 250x25+436+8 -f "Nouveau IBM:size=10" -B $bg -F $fg

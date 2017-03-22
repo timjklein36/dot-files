@@ -1,0 +1,48 @@
+#! /bin/bash
+
+. ../grabcolors.sh
+
+lo=$colo2
+md=$colo4
+hi=$colo1
+
+clock() {
+	while true; do
+		echo -e "%{c}$(date "+%A, %b %d %I:%M %p")"
+		sleep 60;
+	done | lemonbar -p -d -a 1 -g 195x25+1705+10 -f "Nouveau IBM:size=10" -f "Font Awesome" -B $bg -F $fg
+}
+
+temp() {
+	while true; do
+		echo -e "%{c}$(sensors | grep 'Physical' | awk '{print $4}')"
+		sleep 10
+	done | lemonbar -p -d -a 1 -g 100x25+1600+10 -f "Nouveau IBM:size=10" -f "Font Awesome" -B'#08163E' -F'#CAD7B6'
+}
+
+volume() {
+	amixer get Master | sed -n 's/^.*\[\([0-9]\+\)%.*$/\1/p'| uniq
+}
+
+cpuPercent() {
+	ps -eo pcpu | awk 'BEGIN {sum=0.0f} {sum+=$1} END {printf("%.1f", sum)}'
+}
+
+memUsage() {
+	free -h | grep -E 'Mem' | awk '{print $3}'
+}
+
+network() {
+	ping -c 1 8.8.8.8 >/dev/null 2>&1 && echo "UP" || echo "DOWN"
+}
+
+host() {
+	hostname
+}
+
+workspace() {
+	xprop -root _NET_CURRENT_DESKTOP | awk '{print $3}' # active workspace number (zero indexed: [0,1,2...])
+}
+
+clock &
+temp &

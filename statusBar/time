@@ -1,0 +1,8 @@
+#! /bin/bash
+
+. ~/scripts/grabcolors.sh
+
+while true; do
+	echo -e "%{c}%{A:orage:}$(date "+%a, %b %d")%{A} %{F${colo6}}\uf017%{F-} $(date "+%I:%M %p")"
+	sleep 60;
+done | lemonbar -p -d -a 1 -g 200x25+1696+8 -r 2 -R $colo6 -f "Nouveau IBM:size=10" -f "fontawesome:size=12" -B $bg -F $fg | bash

@@ -1,0 +1,23 @@
+#! /bin/bash
+
+. ~/scripts/grabcolors.sh
+
+lo=$colo2
+md=$colo4
+hi=$colo1
+
+while true; do
+	VOL="$(amixer get Master | sed -n 's/^.*\[\([0-9]\+\)%.*$/\1/p'| uniq)";
+	STAT="$(amixer get Master | grep 'Front Left:' | awk '{print $6}' | sed "s/\[//" | sed "s/\]//")"
+
+	if [[ $STAT = "off" ]]; then
+		echo -e "%{c}%{F$colo8}\uf026 ($VOL)%{F-}";
+	else
+		if (( "$VOL" >= "55" )); then
+			echo -e "%{c}\uf028 $VOL";
+		else
+			echo -e "%{c}\uf027 $VOL";
+		fi
+	fi
+	
+done | lemonbar -p -d -a 1 -g 60x25+1616+8 -r 2 -R $colo6 -f "Nouveau IBM:size=10" -f "fontawesome:size=12" -B $bg -F $fg

@@ -1,0 +1,24 @@
+#! /bin/bash
+
+. ~/scripts/grabcolors.sh
+
+while true; do
+	WS=$[$(xprop -root _NET_CURRENT_DESKTOP | awk '{print $3}')]
+	code="\uf121"
+	web="\uf0ac"
+	game="\uf11b"
+	write="\uf0f6"
+	
+	# highlight active workspace
+	if [ $WS -eq "0" ]; then
+		echo -e "%{l} %{F${colo6}}\uf150%{F-}  Arch Linux%{F-}%{U${colo1}}%{r}%{+u}%{F${colo1}}${code}%{F-}%{-u} %{F${colo7}}${web} ${game} ${write} ";
+	elif [ $WS -eq "1" ]; then
+		echo -e "%{l} %{F${colo6}}\uf150%{F-}  Arch Linux%{F-}%{U${colo2}}%{r}%{F${colo7}}${code} %{+u}%{F${colo2}}${web}%{F${colo7}}%{-u} ${game} ${write} ";
+	elif [ $WS -eq "2" ]; then
+		echo -e "%{l} %{F${colo6}}\uf150%{F-}  Arch Linux%{F-}%{U${colo4}}%{r}%{F${colo7}}${code} ${web} %{+u}%{F${colo4}}${game}%{F${colo7}}%{-u} ${write} ";
+	else
+		echo -e "%{l} %{F${colo6}}\uf150%{F-}  Arch Linux%{F-}%{U${colo5}}%{r}%{F${colo7}}${code} ${web} ${game} %{+u}%{F${colo5}}${write}%{-u} ";
+	fi
+	#sleep 1
+
+done | lemonbar -p -d -u 3 -r 2 -R $colo6 -g 316x25+20+8 -F $fg -B $bg -f "Nouveau IBM:size=10" -f "fontawesome:size=12"

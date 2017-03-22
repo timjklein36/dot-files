@@ -1,0 +1,13 @@
+#! /bin/bash
+
+. ~/scripts/statusBar/time &
+. ~/scripts/statusBar/vol &
+. ~/scripts/statusBar/cpu &
+. ~/scripts/statusBar/temp &
+. ~/scripts/statusBar/network &
+. ~/scripts/statusBar/host &
+. ~/scripts/statusBar/spotify &
+. ~/scripts/statusBar/spotifyCompanion &
+. ~/scripts/statusBar/mem &
+. ~/scripts/statusBar/disk &
+
