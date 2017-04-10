@@ -1,6 +1,5 @@
 #! /bin/bash
 ## grabcolors.sh ( from colr by dkeg )
-## thanks dkeg!
 
 export bg="#$(xrdb -query | grep "background" | cut -d '#' -f2)"
 export fg="#$(xrdb -query | grep "foreground" | cut -d '#' -f2)"
