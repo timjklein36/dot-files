@@ -1,0 +1,31 @@
+{
+    "workbench.colorTheme": "Darcula Theme from IntelliJ",
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.fontSize": 12,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "typescript.preferences.quoteStyle": "single",
+    "javascript.preferences.quoteStyle": "single",
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "cSpell.userWords": [
+        "jsonify",
+        "pycodestyle",
+        "pylint",
+        "pythonpath",
+        "repo",
+        "sttutter",
+        "venv",
+        "wsgi"
+    ],
+    "todo-tree.regex": "((//|#|<!--|;|/\\*|^)?\\s*($TAGS)|^\\s*- \\[ \\])",
+    "todo-tree.defaultHighlight": {
+        "icon": "check",
+        "type": "text",
+        "foreground": "#b1c73d",
+        "opacity": 50,
+        "iconColour": "#c57825"
+    },
+    "python.linting.pylintPath": "${workspaceFolder}/venv/bin/pylint",
+    "python.linting.pep8Enabled": true,
+    "python.linting.pep8Path": "${workspaceFolder}/venv/bin/pycodestyle",
+    "window.menuBarVisibility": "toggle"
+}
