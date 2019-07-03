@@ -1,31 +1,150 @@
 {
-    "workbench.colorTheme": "Darcula Theme from IntelliJ",
     "workbench.iconTheme": "material-icon-theme",
     "editor.fontSize": 12,
+    "editor.rulers": [100],
+    "[python]": {
+        "editor.rulers": [79],
+    },
+    "[typescript]": {
+        "editor.rulers": [120],
+    },
     "javascript.updateImportsOnFileMove.enabled": "always",
     "typescript.preferences.quoteStyle": "single",
     "javascript.preferences.quoteStyle": "single",
     "typescript.updateImportsOnFileMove.enabled": "always",
-    "cSpell.userWords": [
-        "jsonify",
-        "pycodestyle",
-        "pylint",
-        "pythonpath",
-        "repo",
-        "sttutter",
-        "venv",
-        "wsgi"
+    "cSpell.ignoreRegExpList": [
+        "r'[A-Z]+",
     ],
-    "todo-tree.regex": "((//|#|<!--|;|/\\*|^)?\\s*($TAGS)|^\\s*- \\[ \\])",
-    "todo-tree.defaultHighlight": {
-        "icon": "check",
-        "type": "text",
-        "foreground": "#b1c73d",
-        "opacity": 50,
-        "iconColour": "#c57825"
+    "window.menuBarVisibility": "toggle",
+    "python.pythonPath": "~/.virtualenvs/${workspaceFolderBasename}/bin/python",
+    "files.watcherExclude": {
+        "**/venv/**": true
     },
-    "python.linting.pylintPath": "${workspaceFolder}/venv/bin/pylint",
+    "gitlens.blame.avatars": false,
+    "gitlens.blame.highlight.enabled": false,
+    "gitlens.codeLens.authors.enabled": false,
+    "gitlens.currentLine.enabled": false,
+    "gitlens.liveshare.allowGuestAccess": false,
+    "gitlens.codeLens.recentChange.enabled": false,
+    "gitlens.blame.format": "${author|10} ${message|30?} ${agoOrDate|14-}",
+    "files.exclude": {
+        "**/*.pyc": true
+    },
+    "window.zoomLevel": 0,
+    "workbench.startupEditor": "newUntitledFile",
     "python.linting.pep8Enabled": true,
-    "python.linting.pep8Path": "${workspaceFolder}/venv/bin/pycodestyle",
-    "window.menuBarVisibility": "toggle"
+    "python.linting.pep8Path": "~/.virtualenvs/${workspaceFolderBasename}/bin/pycodestyle",
+    "python.linting.pylintPath": "~/.virtualenvs/${workspaceFolderBasename}/bin/pylint",
+    "python.linting.pep8CategorySeverity.E": "Warning",
+    "files.autoSave": "onFocusChange",
+    "workbench.editor.enablePreview": false,
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+    "workbench.colorTheme": "Banner (rainglow)",
+    "terminal.integrated.fontSize": 13,
+    "workbench.colorCustomizations": {
+        "editorHint.border": "#dadada",
+        "editorHint.foreground": "#dadada00",
+        "[Banner (rainglow)]": {
+            "activityBar.foreground": "#ad4eca",
+            "statusBar.foreground": "#260035",
+            "badge.foreground": "#260035",
+            "activityBarBadge.foreground": "#260035",
+            "extensionBadge.remoteForeground": "#260035",
+            "editorHint.border": "#eb9dff",
+            "editorHint.foreground": "#fdfdfd00",
+            "editorInfo.foreground": "#abb89f",
+            "editorWarning.foreground": "#9cf339",
+            "editorError.foreground": "#ff0077"
+        }
+    },
+    "editor.tokenColorCustomizations": {
+        "[Darcula Theme from IntelliJ]": {
+            "textMateRules": [
+                {
+                    "scope": "variable.parameter.function-call.python",
+                    "settings": {
+                        "foreground": "#eb6d6d"
+                    }
+                },
+                {
+                    "scope": "keyword.codetag.notation.python",
+                    "settings": {
+                        "foreground": "#bde700",
+                        "fontStyle": "bold"
+                    }
+                }
+            ]
+        },
+        "[Banner (rainglow)]": {
+            "textMateRules":[
+                {
+                    "scope": "support.type.property-name.json.comments",
+                    "settings": {
+                        "foreground": "#b063f0"
+                    }
+                },
+                {
+                    "scope": "meta.function-call.generic.python",
+                    "settings": {
+                        "foreground": "#76c7ae"
+                    }
+                },
+                {
+                    "scope": "source.python",
+                    "settings": {
+                        "foreground": "#e3bbfa"
+                    }
+                },
+                {
+                    "scope": "entity.name.function.python",
+                    "settings": {
+                        "foreground": "#e359ff",
+                        "fontStyle": "bold"
+                    }
+                },
+                {
+                    "scope": "comment.line",
+                    "settings": {
+                        "foreground": "#b288c4"
+                    }
+                },
+                {
+                    "scope": "keyword.codetag.notation.python",
+                    "settings": {
+                        "foreground": "#88ec2b",
+                    }
+                },
+                {
+                    "scope": "punctuation.definition.decorator.python",
+                    "settings": {
+                        "foreground": "#00ffff"
+                    }
+                },
+                {
+                    "scope": "entity.name.function.decorator.python",
+                    "settings": {
+                        "foreground": "#00ffff"
+                    }
+                },
+                {
+                    "scope": "support.type.python",
+                    "settings": {
+                        "foreground": "#75ff68",
+                    }
+                },
+                {
+                    "scope": "support.function.builtin.python",
+                    "settings": {
+                        "foreground": "#75ff68",
+                    }
+                },
+                {
+                    "scope": "keyword.control.flow.python",
+                    "settings": {
+                        "foreground": "#c1daab"
+                    }
+                }
+            ]
+        }
+    }
 }
