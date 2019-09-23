@@ -6,14 +6,19 @@
         "editor.rulers": [79],
     },
     "[typescript]": {
-        "editor.rulers": [120],
+        "editor.rulers": [140],
+        "editor.tabSize": 2
+    },
+    "[scss]": {
+        "editor.tabSize": 2
     },
     "javascript.updateImportsOnFileMove.enabled": "always",
     "typescript.preferences.quoteStyle": "single",
     "javascript.preferences.quoteStyle": "single",
     "typescript.updateImportsOnFileMove.enabled": "always",
+    "cSpell.userWords": [],
     "cSpell.ignoreRegExpList": [
-        "r'[A-Z]+",
+        "r'[A-Z]+'",
     ],
     "window.menuBarVisibility": "toggle",
     "python.pythonPath": "~/.virtualenvs/${workspaceFolderBasename}/bin/python",
@@ -28,13 +33,21 @@
     "gitlens.codeLens.recentChange.enabled": false,
     "gitlens.blame.format": "${author|10} ${message|30?} ${agoOrDate|14-}",
     "files.exclude": {
+        "**/__pycache__": true,
         "**/*.pyc": true
     },
     "window.zoomLevel": 0,
     "workbench.startupEditor": "newUntitledFile",
     "python.linting.pep8Enabled": true,
     "python.linting.pep8Path": "~/.virtualenvs/${workspaceFolderBasename}/bin/pycodestyle",
+    "python.linting.pep8Args": [
+        "--ignore=E402"
+    ],
     "python.linting.pylintPath": "~/.virtualenvs/${workspaceFolderBasename}/bin/pylint",
+    "python.linting.pylintArgs": [
+        "--load-plugins",
+        "pylint_django"
+    ],
     "python.linting.pep8CategorySeverity.E": "Warning",
     "files.autoSave": "onFocusChange",
     "workbench.editor.enablePreview": false,
@@ -52,7 +65,7 @@
             "extensionBadge.remoteForeground": "#260035",
             "editorHint.border": "#eb9dff",
             "editorHint.foreground": "#fdfdfd00",
-            "editorInfo.foreground": "#abb89f",
+            "editorInfo.foreground": "#d0dfc3",
             "editorWarning.foreground": "#9cf339",
             "editorError.foreground": "#ff0077"
         }
@@ -146,5 +159,9 @@
                 }
             ]
         }
-    }
+    },
+    "typescript.tsserver.log": "verbose",
+    "tslint.alwaysShowRuleFailuresAsWarnings": false,
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true
 }
