@@ -1,6 +1,8 @@
 {
     "workbench.iconTheme": "material-icon-theme",
     "editor.fontSize": 12,
+    "editor.fontFamily": "'JetBrains Mono', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.fontLigatures": true,
     "editor.rulers": [100],
     "[python]": {
         "editor.rulers": [79],
@@ -20,7 +22,9 @@
         "Darcula",
         "Deletable",
         "Dropdown",
+        "Editability",
         "GPAPI",
+        "Mixins",
         "PPC's",
         "Uncategorized",
         "astimezone",
@@ -68,6 +72,7 @@
         "noqa",
         "objs",
         "openpyxl",
+        "orderable",
         "pbar",
         "piña",
         "prefunding",
@@ -85,6 +90,7 @@
         "rfind",
         "rgetattr",
         "runserver",
+        "scrollable",
         "serializable",
         "sgbackend",
         "shortu",
@@ -181,25 +187,55 @@
         "[Banner (rainglow)]": {
             "textMateRules":[
                 {
+                    "scope": "",
+                    "settings": {
+                        "foreground": "#a6a0ff"
+                    }
+                },
+                {
+                    "scope": "variable.language.this.ts, storage.modifier.ts",
+                    "settings": {
+                        "foreground": "#e7ddff"
+                    }
+                },
+                {
+                    "scope": "meta.type.annotation.ts entity.name.type.ts",
+                    "settings": {
+                        "foreground": "#1ec010"
+                    }
+                },
+                {
+                    "scope": "entity.other.inherited-class.ts",
+                    "settings": {
+                        "foreground": "#b063f0"
+                    }
+                },
+                {
+                    "scope": "comment.block.documentation.ts",
+                    "settings": {
+                        "foreground": "#71649b"
+                    }
+                },
+                {
                     "scope": "support.type.property-name.json.comments",
                     "settings": {
                         "foreground": "#b063f0"
                     }
                 },
                 {
-                    "scope": "meta.function-call.generic.python",
+                    "scope": "meta.function-call.generic.python, entity.name.function.ts, new.expr.ts entity.name.type.ts",
                     "settings": {
                         "foreground": "#76c7ae"
                     }
                 },
                 {
-                    "scope": "source.python",
+                    "scope": "source.python, source.ts, variable.other.property.ts, variable.other.object.property.ts, variable.other.object.ts, variable.other.readwrite.ts",
                     "settings": {
                         "foreground": "#e3bbfa"
                     }
                 },
                 {
-                    "scope": "entity.name.function.python",
+                    "scope": "entity.name.function.python, meta.definition.method.ts entity.name.function.ts",
                     "settings": {
                         "foreground": "#e359ff",
                         "fontStyle": "bold"
@@ -224,13 +260,13 @@
                     }
                 },
                 {
-                    "scope": "entity.name.function.decorator.python",
+                    "scope": "entity.name.function.decorator.python, meta.decorator.ts meta.function-call.ts entity.name.function.ts",
                     "settings": {
                         "foreground": "#00ffff"
                     }
                 },
                 {
-                    "scope": "support.type.python",
+                    "scope": "support.type.python, support.type.primitive.ts, support.function.builtin.python, support.class.builtin.ts",
                     "settings": {
                         "foreground": "#75ff68",
                     }
@@ -240,12 +276,6 @@
                     "settings": {
                         "foreground": "#e359ff",
                         "fontStyle": "bold"
-                    }
-                },
-                {
-                    "scope": "support.function.builtin.python",
-                    "settings": {
-                        "foreground": "#75ff68",
                     }
                 },
                 {
