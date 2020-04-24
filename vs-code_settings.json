@@ -26,12 +26,14 @@
         "GPAPI",
         "Mixins",
         "PPC's",
+        "PPCs",
         "Uncategorized",
         "astimezone",
         "calibri",
         "codetag",
         "collectstatic",
         "cptpla",
+        "datatable",
         "deserializable",
         "deserialize",
         "deserialized",
@@ -42,11 +44,13 @@
         "eclinicalgps",
         "endblock",
         "etree",
+        "falsey",
         "fdescribe",
         "financials",
         "forex",
         "fortawesome",
         "getenv",
+        "getsizeof",
         "gitlens",
         "gpmodels",
         "gptransaction",
@@ -56,6 +60,7 @@
         "ints",
         "invoiceable",
         "invoiceables",
+        "invoicee",
         "issubset",
         "iterfy",
         "itertools",
@@ -64,12 +69,17 @@
         "jsonify",
         "klass",
         "liveshare",
+        "lstsq",
         "lxml",
+        "matmul",
+        "memoization",
+        "memoized",
         "mesg",
         "metatag",
         "negotiables",
         "noinput",
         "noqa",
+        "numpy",
         "objs",
         "openpyxl",
         "orderable",
@@ -85,6 +95,7 @@
         "pytz",
         "quotemark",
         "rainglow",
+        "rcond",
         "readwrite",
         "repo",
         "rfind",
@@ -92,12 +103,15 @@
         "runserver",
         "scrollable",
         "serializable",
+        "serializer",
         "sgbackend",
         "shortu",
         "slideout",
         "sqlite",
         "strftime",
         "study",
+        "tablefmt",
+        "tabset",
         "unregister",
         "unshown",
         "venv",
@@ -115,7 +129,10 @@
     "window.menuBarVisibility": "toggle",
     "python.pythonPath": "~/.virtualenvs/${workspaceFolderBasename}/bin/python",
     "files.watcherExclude": {
-        "**/venv/**": true
+        "**/venv/**": true,
+        "**/__pycache__": true,
+        "**/*.pyc": true,
+        "**/node_modules": true
     },
     "gitlens.blame.avatars": false,
     "gitlens.blame.highlight.enabled": false,
@@ -125,6 +142,7 @@
     "gitlens.codeLens.recentChange.enabled": false,
     "gitlens.blame.format": "${author|10} ${message|30?} ${agoOrDate|14-}",
     "files.exclude": {
+        "**/venv/**": true,
         "**/__pycache__": true,
         "**/*.pyc": true,
         "**/node_modules": true
@@ -196,6 +214,18 @@
                     "scope": "variable.language.this.ts, storage.modifier.ts",
                     "settings": {
                         "foreground": "#e7ddff"
+                    }
+                },
+                {
+                    "scope": "meta.object-literal.key.ts, meta.item-access.arguments.python",
+                    "settings": {
+                        "foreground": "#ffffff"
+                    }
+                },
+                {
+                    "scope": "meta.method.declaration.ts meta.return.type.ts entity.name.type.ts",
+                    "settings": {
+                        "foreground": "#1ec010"
                     }
                 },
                 {
@@ -272,6 +302,12 @@
                     }
                 },
                 {
+                    "scope": "constant.numeric",
+                    "settings": {
+                        "foreground": "#ff49f6"
+                    }
+                },
+                {
                     "scope": "meta.function.python support.type.python",
                     "settings": {
                         "foreground": "#e359ff",
@@ -297,5 +333,56 @@
         "Dockerfile*": "dockerfile",
         "**/bin/*": "shellscript"
     },
-    "problems.showCurrentInStatus": true
+    "problems.showCurrentInStatus": true,
+    "python.formatting.autopep8Path": "~/.virtualenvs/${workspaceFolderBasename}/bin/autopep8",
+    "markdown-pdf.outputDirectory": "~/Downloads/markdown-pdf",
+    "cSpell.enableFileTypes": [
+        "asciidoc",
+        "c",
+        "cpp",
+        "csharp",
+        "css",
+        "git-commit",
+        "go",
+        "handlebars",
+        "haskell",
+        "html",
+        "jade",
+        "java",
+        "javascript",
+        "javascriptreact",
+        "json",
+        "jsonc",
+        "latex",
+        "less",
+        "markdown",
+        "php",
+        "plaintext",
+        "pug",
+        "python",
+        "restructuredtext",
+        "rust",
+        "scala",
+        "scss",
+        "shellscript",
+        "text",
+        "typescript",
+        "typescriptreact",
+        "yaml",
+        "yml"
+    ],
+    "workbench.activityBar.visible": true,
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [" "],
+            "commands": [
+                "workbench.action.showCommands",
+            ]
+        }
+    ],
+    "vim.use<C-r>": "true",
+    "vim.useSystemClipboard": true,
+    "vim.easymotion": true,
+    "vim.foldfix": true,
+    "tslint.configFile": "tslint.json"
 }
