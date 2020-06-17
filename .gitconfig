@@ -1,0 +1,9 @@
+[core]
+        excludesfile = /home/tim/.gitignore_global
+[credential]
+        helper = store
+[user]
+        name = ...
+        email = ...
+[commit]
+        template = /home/tim/.git-commit-message
