@@ -1,0 +1,9 @@
+venv/
+.vscode/
+*.hide
+*.hide.*
+*-hide.*
+*_hide.*
+hide.*
+hide-*
+hide_*
