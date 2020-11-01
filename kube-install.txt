@@ -1,0 +1,46 @@
+# Check if your machine supports virtualization
+grep -E --color 'vmx|svm' /proc/cpuinfo
+
+# Install kubectl from the ubuntu snap repository
+snap install kubectl --classic
+
+# Check that it is working
+kubectl version --client
+kubectl cluster-info
+
+# Add bash completion for kubectl
+sudo kubectl completion bash > kubectl
+sudo mv kubectl /etc/bash_completion.d/kubectl
+
+# Install kvm (for virtualization)
+# https://help.ubuntu.com/community/KVM/Installation
+sudo apt install qemu-kvm libvirt cpu-checker
+kvm-ok
+sudo apt install libvirt-daemon-system libvirt-clients bridge-utils
+sudo adduser `id -un` libvirt
+sudo adduser `id -un` libvirt-qemu # Not sure if this group was necessary
+sudo adduser `id -un` kvm
+
+# Logout and restart your machine
+# sudo reboot
+exit
+
+# Make sure virtualization is working
+virsh list --all
+
+# Install minikube (from the latest binary, not snap)
+# https://kubernetes.io/docs/tasks/tools/install-minikube/
+cd ~/Downloads/installer/
+curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+sudo mv minikube /usr/local/bin
+sudo chmod +x /usr/local/bin/minikube
+minikube start
+
+# Try a walkthrough
+# https://kubernetes.io/docs/setup/learning-environment/minikube/#quickstart
+
+# ...or this one
+# https://kubernetes.io/docs/tutorials/hello-minikube/
+
+# All done?
+minikube stop
