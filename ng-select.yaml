@@ -1,0 +1,20 @@
+session_name: ng-select
+shell_command_before:
+- cd /home/tim/projects/ng-select
+- nvm use 14
+- clear
+windows:
+- focus: 'true'
+  layout: even-horizontal
+  options: {}
+  panes:
+  - focus: 'true'
+  window_name: bash
+- layout: even-horizontal
+  options:
+    automatic-rename: 'off'
+  panes:
+  - focus: 'true'
+    shell_command:
+    - npx ng serve
+  window_name: running-servers

@@ -1,0 +1,23 @@
+session_name: mealman
+shell_command_before:
+- source /usr/local/bin/virtualenvwrapper.sh
+- workon mealman
+- nvm use 14
+- clear
+windows:
+- focus: 'true'
+  layout: even-horizontal
+  options: {}
+  panes:
+  - focus: 'true'
+  window_name: bash
+- layout: even-horizontal
+  options:
+    automatic-rename: 'off'
+  panes:
+  - focus: 'true'
+    shell_command:
+    - ./manage.py runserver 9000
+  - shell_command:
+    - mealman-ui
+  window_name: running-servers

@@ -1,0 +1,11 @@
+session_name: model_bakery
+shell_command_before:
+- workon model_bakery
+- clear
+windows:
+- focus: 'true'
+  layout: even-horizontal
+  options: {}
+  panes:
+  - focus: 'true'
+  window_name: bash
