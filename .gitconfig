@@ -7,3 +7,4 @@
         email = ...
 [commit]
         template = /home/tim/.git-commit-message
+        gpgsign = true
