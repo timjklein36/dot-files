@@ -20,6 +20,7 @@ alias pushy='$(git push 2>&1 | grep "git push")'
 
 # tmux aliases
 alias killme='tmux kill-session'
+alias killall='tmux kill-session -a && tmux kill-session'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
